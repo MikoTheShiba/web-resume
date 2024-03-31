@@ -1,12 +1,35 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
     Typography, 
     Button, 
-    Drawer 
+    Drawer,
+    Toolbar,
+    Divider,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemText,
+    Box
 } from "@mui/material";
-const Sidebar = () => {
+
+const routestest = ['Home', 'Site A', 'Site B']
+
+const Sidebar = ({toggle}) => {
     return(
-        <Typography>Hi</Typography>
+        <Box onClick={toggle}>
+            <Toolbar/>
+            <Divider/>
+            <Typography>SIDEBAR</Typography>
+            <List>
+                {
+                    routestest.map((text)=>(
+                        <ListItem>
+                            <ListItemText primary = {text}></ListItemText>
+                        </ListItem>
+                    ))
+                }
+            </List>
+        </Box>
     )
 }
 

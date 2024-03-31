@@ -12,7 +12,7 @@ import {
     Box
 } from "@mui/material";
 
-const routestest = ['Home', 'Site A', 'Site B']
+const routestest = ['Home', 'Site A', 'Site B', 'Site C']
 
 const Sidebar = ({toggle}) => {
     return(

@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import Sidebar from './components/sidebar/sidebar';
+import Barhead from './components/barhead/barhead';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <Sidebar />
+        <Barhead />
         <a
           className="App-link"
           href="https://reactjs.org"

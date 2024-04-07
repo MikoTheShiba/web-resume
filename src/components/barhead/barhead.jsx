@@ -9,6 +9,9 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import Sidebar from '../sidebar/sidebar';
 import { useState } from 'react';
+import { ThemeProvider } from '@mui/material';
+import { bebas } from "../../themes";
+import { mainblue } from '../../colors'
 
 const navs = ['Home', 'A Site', 'B Site', 'C Site']
 
@@ -19,7 +22,7 @@ const Barhead = () => {
     }
     return (
         <Box sx={{ display: 'flex' }}>
-        <AppBar component='nav'>
+        <AppBar component='nav' sx={{backgroundColor:{mainblue}}}>
             <Toolbar>
                 <IconButton
                     color="inherit"
@@ -29,7 +32,9 @@ const Barhead = () => {
                 >
                     <MenuIcon/>
                 </IconButton>
-                <Typography>Hi</Typography>
+                <ThemeProvider theme={bebas}>
+                    <Typography variant='h4'>WEB-RESUME</Typography>
+                </ThemeProvider>
             </Toolbar>
         </AppBar>
             <nav>
@@ -37,10 +42,6 @@ const Barhead = () => {
                     open={drawerOpen}
                     onClose={handleDrawer}
                     variant="temporary"
-                    sx={{
-                    display: { xs: 'none', sm: 'block' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box' },
-                    }}
                 >
                     <Sidebar
                         toggle={handleDrawer}

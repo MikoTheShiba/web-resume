@@ -1,20 +1,30 @@
 import logo from '../logo.svg';
 import '../App.css';
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useState } from 'react';
+import { Switch, Typography } from '@mui/material'
 import Sidebar from '../components/sidebar/sidebar';
 import Barhead from '../components/barhead/barhead';
 
 
 const ReactTestPage = () => {
+    const [theme, setTheme] = useState('DarkMode')
+    const [themeSwitch, setThemeSwitch] = useState(false);
+    const handleThemeSwitch = () => {
+        setThemeSwitch(prevState => !prevState);
+        if(themeSwitch){
+            setTheme('DarkMode');
+        } else {
+            setTheme('LightMode');
+        }
+    }
     return (
         <div className="App">
-            <header className="App-header">
+            <header>
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>
                     Edit <code>src/App.js</code> and save to reload.
                 </p>
-                <Barhead />
                 <a
                     className="App-link"
                     href="https://reactjs.org"
@@ -23,6 +33,9 @@ const ReactTestPage = () => {
                 >
                     Learn React or else
                 </a>
+                <Typography>Dark Mode</Typography>
+                <Switch checked={themeSwitch} onChange={handleThemeSwitch}/>
+
             </header>
         </div>
     )

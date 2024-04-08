@@ -3,15 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Box, Toolbar } from '@mui/material';
-import Barhead from './components/barhead/barhead';
+import { Box } from '@mui/material';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Box>
-      <Toolbar />
-      <Barhead/>
       <App />
     </Box>
   </React.StrictMode>

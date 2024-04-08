@@ -7,6 +7,9 @@ import {
     Box
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import Sidebar from '../sidebar/sidebar';
 import { useState } from 'react';
 import { ThemeProvider } from '@mui/material';
@@ -15,28 +18,31 @@ import { mainblue } from '../../colors'
 
 const navs = ['Home', 'A Site', 'B Site', 'C Site']
 
-const Barhead = () => {
+const Barhead = ({ lightToggle, theme }) => {
     const [ drawerOpen, setDrawerOpen ] = useState(false);
     const handleDrawer = () => {
         setDrawerOpen((prevState) => !prevState);
     }
     return (
         <Box sx={{ display: 'flex' }}>
-        <AppBar component='nav' sx={{backgroundColor:{mainblue}}}>
-            <Toolbar>
-                <IconButton
-                    color="inherit"
-                    aria-label="open drawer"
-                    edge="start"
-                    onClick={handleDrawer}
-                >
-                    <MenuIcon/>
-                </IconButton>
-                <ThemeProvider theme={bebas}>
-                    <Typography variant='h4' sx={{userSelect:'none'}}>WEB-RESUME</Typography>
-                </ThemeProvider>
-            </Toolbar>
-        </AppBar>
+            <AppBar component='nav' sx={{backgroundColor:{mainblue}}}>
+                <Toolbar>
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        edge="start"
+                        onClick={handleDrawer}
+                    >
+                        <MenuIcon/>
+                    </IconButton>
+                    <ThemeProvider theme={bebas}>
+                        <Typography variant='h4' sx={{userSelect:'none', flexGrow:1}}>WEB-RESUME</Typography>
+                        <IconButton color="inherit" sx={{ marginLeft: 'auto' }} onClick={lightToggle}>
+                            {theme =='LightMode'? <LightModeOutlinedIcon/> : <DarkModeOutlinedIcon/>}
+                        </IconButton>
+                    </ThemeProvider>
+                </Toolbar>
+            </AppBar>
             <nav>
                 <Drawer
                     open={drawerOpen}

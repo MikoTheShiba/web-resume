@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ThemeProvider } from '@mui/material'
+import { Link } from 'react-router-dom';
 import {
     
     Box,
@@ -26,10 +27,12 @@ import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOu
 import PermMediaOutlinedIcon from '@mui/icons-material/PermMediaOutlined';
 import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined';
 import FormatAlignJustifyOutlinedIcon from '@mui/icons-material/FormatAlignJustifyOutlined';
+import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
 import { bebas } from "../../themes";
 import { mainblue } from '../../colors'
 
-const routestest = ['About', 'Skillsheet', 'Work Experience', 'Education', 'Certifications', 'Portfolio']
+const routestest = ['About', 'Skillsheet', 'Work Experience', 'Education', 'Portfolio']
+const routeLinks = ['/', '/skills', '/workexp', '/edu', '/portfolio']
 
 const RouteIcons = ({label}) => {
     switch(label){
@@ -40,6 +43,7 @@ const RouteIcons = ({label}) => {
         case 'Certifications': return(<WorkspacePremiumOutlinedIcon/>); break;
         case 'Portfolio': return(<PermMediaOutlinedIcon/>); break;
         case 'Achievements': return(<EmojiEventsOutlinedIcon/>); break;
+        case 'Testing Room': return(<CodeOutlinedIcon/>); break;
         default: return(<FormatAlignJustifyOutlinedIcon/>); break;
     }
 }
@@ -58,15 +62,14 @@ const Sidebar = ({toggle}) => {
             <Divider/>
             <List>
                 {
-                    routestest.map((text)=>(
-                        <ListItem key={text} disablePadding>
+                    routestest.map((text, index)=>(
+                        <ListItem key={text} disablePadding to={routeLinks[index]}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <RouteIcons label={text}/>
                                 </ListItemIcon>
                                 <ListItemText primary = {text}></ListItemText>
                             </ListItemButton>
-                            
                         </ListItem>
                     ))
                 }

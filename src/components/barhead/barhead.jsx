@@ -33,7 +33,7 @@ const Barhead = () => {
                     <MenuIcon/>
                 </IconButton>
                 <ThemeProvider theme={bebas}>
-                    <Typography variant='h4'>WEB-RESUME</Typography>
+                    <Typography variant='h4' sx={{userSelect:'none'}}>WEB-RESUME</Typography>
                 </ThemeProvider>
             </Toolbar>
         </AppBar>

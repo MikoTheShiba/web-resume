@@ -1,5 +1,3 @@
-https://www.youtube.com/watch?v=n3MBYwsyuL4&t=12s
+YO ROUTING IS FUNNY HARD. FIND A WAY TO ENABLE ROUTING AFTER BASING IT FROM A REACT-CREATE-APP
 
-^This vid right here helps for now
-
-Bing Copilot was kinda helpful so Imma copy paste his output in Answer.txt
+THAT EXPLAINS IT. REACT-ROUTER-DOM HAD AN UPDATE THAT FUCKED THE SYNTAX.

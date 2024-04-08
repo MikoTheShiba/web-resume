@@ -50,8 +50,8 @@ const Sidebar = ({toggle}) => {
             <Card sx={{height:'100px', backgroundColor:'#3d9eff'}}>
                 <CardContent sx={{ alignItems:'center', justifyContent:'center'}}>
                     <ThemeProvider theme={bebas}>
-                        <Typography variant='h3' gutterBottom sx={{marginBottom:0, marginTop:0}}>WEB RESUME</Typography>
-                        <Typography variant='h6' gutterBottom sx={{marginTop:-1.5}}>BY MIKOTHESHIBA</Typography>
+                        <Typography variant='h3' gutterBottom sx={{userSelect:'none', marginBottom:0, marginTop:0}}>WEB RESUME</Typography>
+                        <Typography variant='h6' gutterBottom sx={{userSelect:'none', marginTop:-1.5}}>BY MIKOTHESHIBA</Typography>
                     </ThemeProvider>
                 </CardContent>
             </Card>

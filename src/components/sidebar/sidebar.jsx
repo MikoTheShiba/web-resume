@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ThemeProvider } from '@mui/material'
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
     
     Box,
@@ -18,37 +18,13 @@ import {
     Typography,
     List,
 } from "@mui/material";
-//MUI ICONS
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import LeaderboardOutlinedIcon from '@mui/icons-material/LeaderboardOutlined';
-import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
-import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
-import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOutlined';
-import PermMediaOutlinedIcon from '@mui/icons-material/PermMediaOutlined';
-import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined';
-import FormatAlignJustifyOutlinedIcon from '@mui/icons-material/FormatAlignJustifyOutlined';
-import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
+import { RouteData } from "../../RouteData";
 import { bebas } from "../../themes";
 import { mainblue } from '../../colors'
 
-const routestest = ['About', 'Skillsheet', 'Work Experience', 'Education', 'Portfolio']
-const routeLinks = ['/', '/skills', '/workexp', '/edu', '/portfolio']
-
-const RouteIcons = ({label}) => {
-    switch(label){
-        case 'About': return(<AccountCircleOutlinedIcon/>); break;
-        case 'Skillsheet': return(<LeaderboardOutlinedIcon/>); break;
-        case 'Work Experience': return(<WorkOutlineOutlinedIcon/>); break;
-        case 'Education': return(<SchoolOutlinedIcon/>); break;
-        case 'Certifications': return(<WorkspacePremiumOutlinedIcon/>); break;
-        case 'Portfolio': return(<PermMediaOutlinedIcon/>); break;
-        case 'Achievements': return(<EmojiEventsOutlinedIcon/>); break;
-        case 'Testing Room': return(<CodeOutlinedIcon/>); break;
-        default: return(<FormatAlignJustifyOutlinedIcon/>); break;
-    }
-}
 
 const Sidebar = ({toggle}) => {
+    const navigate = useNavigate();
     return(
         <Paper onClick={toggle}>
             <Card sx={{height:'100px', backgroundColor:'#3d9eff'}}>
@@ -62,13 +38,13 @@ const Sidebar = ({toggle}) => {
             <Divider/>
             <List>
                 {
-                    routestest.map((text, index)=>(
-                        <ListItem key={text} disablePadding to={routeLinks[index]}>
+                    RouteData.map((sdata)=>(
+                        <ListItem key={sdata.title} disablePadding onClick={()=>{navigate(sdata.path)}}>
                             <ListItemButton>
                                 <ListItemIcon>
-                                    <RouteIcons label={text}/>
+                                    {sdata.icon}
                                 </ListItemIcon>
-                                <ListItemText primary = {text}></ListItemText>
+                                <ListItemText primary = {sdata.title}></ListItemText>
                             </ListItemButton>
                         </ListItem>
                     ))

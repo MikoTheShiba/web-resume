@@ -20,7 +20,7 @@ const ReactTestPage = () => {
     }
     return (
         <div className="App">
-            <header>
+            <header className="App-Header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>
                     Edit <code>src/App.js</code> and save to reload.

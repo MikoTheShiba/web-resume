@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ThemeProvider } from '@mui/material'
 import { useNavigate } from 'react-router-dom';
 import {
-    
     Box,
     Button,
     Card,
@@ -22,6 +21,7 @@ import { RouteData } from "../../RouteData";
 import { bebas } from "../../themes";
 import { mainblue } from '../../colors'
 
+//So, you wanna set up a new page? No worries. Just make the page and add your info to /src/RouteData.jsx
 
 const Sidebar = ({toggle}) => {
     const navigate = useNavigate();

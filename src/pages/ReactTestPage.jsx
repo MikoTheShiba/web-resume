@@ -1,23 +1,10 @@
 import logo from '../logo.svg';
 import '../App.css';
 import React from 'react';
-import { useState } from 'react';
-import { Switch, Typography } from '@mui/material'
-import Sidebar from '../components/sidebar/sidebar';
-import Barhead from '../components/barhead/barhead';
+import { Typography } from '@mui/material'
 
 
 const ReactTestPage = () => {
-    const [theme, setTheme] = useState('DarkMode')
-    const [themeSwitch, setThemeSwitch] = useState(false);
-    const handleThemeSwitch = () => {
-        setThemeSwitch(prevState => !prevState);
-        if(themeSwitch){
-            setTheme('DarkMode');
-        } else {
-            setTheme('LightMode');
-        }
-    }
     return (
         <div className="App">
             <header className="App-Header">
@@ -34,7 +21,6 @@ const ReactTestPage = () => {
                     Learn React or else
                 </a>
                 <Typography>Dark Mode</Typography>
-                <Switch checked={themeSwitch} onChange={handleThemeSwitch}/>
 
             </header>
         </div>

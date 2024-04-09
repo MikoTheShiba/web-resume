@@ -1,16 +1,16 @@
-import logo from '../logo.svg';
-import '../App.css';
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Sidebar from '../components/sidebar/sidebar';
-import Barhead from '../components/barhead/barhead';
-import {Toolbar, Typography} from '@mui/material';
-
+import { Grid, Toolbar, Typography} from '@mui/material';
+import MainProfileCard from '../components/cards/MainProfileCard';
 
 const Home = () => {
     return (
         <div>
             <Toolbar/>
+            <Grid container spacing={2} className="gridContainer">
+                <Grid item xs={12} md={6}>
+                    <MainProfileCard/>
+                </Grid>
+            </Grid>
             <Typography>HI</Typography>
             <Typography>HI</Typography>
             <Typography>HI</Typography>

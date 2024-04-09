@@ -9,14 +9,11 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import Sidebar from '../sidebar/sidebar';
 import { useState } from 'react';
 import { ThemeProvider } from '@mui/material';
 import { bebas } from "../../themes";
 import { mainblue } from '../../colors'
-
-const navs = ['Home', 'A Site', 'B Site', 'C Site']
 
 const Barhead = ({ lightToggle, theme }) => {
     const [ drawerOpen, setDrawerOpen ] = useState(false);

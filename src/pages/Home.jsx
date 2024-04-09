@@ -5,17 +5,11 @@ import MainProfileCard from '../components/cards/MainProfileCard';
 const Home = () => {
     return (
         <div>
-            <Toolbar/>
-            <Grid container spacing={2} className="gridContainer">
+            <Grid container spacing={2} style={{ marginRight: 4, marginLeft:2, marginTop:2}}>
                 <Grid item xs={12} md={6}>
                     <MainProfileCard/>
                 </Grid>
             </Grid>
-            <Typography>HI</Typography>
-            <Typography>HI</Typography>
-            <Typography>HI</Typography>
-            <Typography>HI</Typography>
-            <Typography>HI</Typography>
         </div>
     )
 }

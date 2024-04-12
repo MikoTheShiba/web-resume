@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { Toolbar } from '@mui/material';
 import Barhead from './components/barhead/barhead';
 import { RouteData } from './RouteData';
@@ -11,6 +11,7 @@ import { RouteData } from './RouteData';
 function App() {
   const [theme, setTheme] = useState('DarkMode')
   const [themeSwitch, setThemeSwitch] = useState(false);
+  
   const handleThemeSwitch = () => {
     setThemeSwitch(prevState => !prevState);
     if (themeSwitch) {
@@ -19,6 +20,16 @@ function App() {
       setTheme('LightMode');
     }
   }
+  {/*
+  const location = useLocation();
+  function getTitle(pathNow) {
+    const obj = RouteData.find(item => item.path === pathNow);
+    return obj ? obj.y : null;
+  }
+  useEffect(()=>{
+    document.title = `${getTitle(location)} - WEBRESUME`
+  })
+  */}
   return (
     <div>
       <Router>

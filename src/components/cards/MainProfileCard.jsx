@@ -15,9 +15,14 @@ const MainProfileCard = () => {
                 </Grid>
                 <Grid item>
                     <Stack xs={12} md={6}>
-                        <Card xs={12} md={6}>
+                        <Card xs={12} md={6} className='CardEntry'>
                             <ThemeProvider theme={bebas}>
                                 <Typography variant='h4' xs={12} md={6}>MIKO ANGELES</Typography>
+                            </ThemeProvider>
+                        </Card>
+                        <Card xs={12} md={6} className='CardEntry'>
+                            <ThemeProvider theme={bebas}>
+                                <Typography variant='h6' xs={12} md={6}>WEB DEVELOPER</Typography>
                             </ThemeProvider>
                         </Card>
                     </Stack>

@@ -9,6 +9,27 @@ const bebas = createTheme({
         ].join(','),
     },
 })
+const mplusone = createTheme({
+    typography:{
+        fontFamily: [
+            'M PLUS 1 Code, monospace',
+        ].join(','),
+    },
+})
+const seymour = createTheme({
+    typography:{
+        fontFamily: [
+            'Seymour One'
+        ].join(','),
+    },
+})
+const roboto = createTheme({
+    typography:{
+        fontFamily: [
+            'Roboto Mono'
+        ].join(','),
+    },
+})
 
 
-export {bebas};
+export {bebas, seymour, roboto};

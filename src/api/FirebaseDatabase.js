@@ -14,3 +14,45 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
+/*HELLO! THIS IS HOW YOU USE THE "API"*/
+/*
+
+1. How to fetch data from Firestore Database
+
+please note that 'users' and 'shiba' refer to collections and documents respectively
+
+useEffect(() => {
+        const fetchData = async () => {
+            const docRef = doc(db, 'users', 'shiba');
+            const docSnap = await getDoc(docRef);
+            if (docSnap.exists()) {
+                console.log(docSnap.data());
+            } else {
+                console.log('(not) real')
+            }
+        }
+        fetchData();
+        return () => {
+            // Cleanup function if needed
+        };
+    }, [])
+
+
+2. How to push data from Firestore Database
+[section incomplete. please refer to the code below and study it or something idk]
+*/
+
+/*PUSH EXAMPLE*/
+/*
+const firebasetest = async (e) => {
+        e.preventDefault();  
+        try {
+            const docRef = await addDoc(collection(db, "todos"), {
+              todo: todo,    
+            });
+            console.log("Document written with ID: ", docRef.id);
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
+    }
+*/

@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { Button, Grid, Toolbar, Typography} from '@mui/material';
+import { Grid } from '@mui/material';
 import MainProfileCard from '../components/cards/MainProfileCard';
-import { collection, doc, where, setDoc, addDoc, getDocs, getDoc} from "firebase/firestore";
+import SkillList from '../components/cards/skillsheet/SkillList';
+import { doc, getDoc} from "firebase/firestore";
 import {db} from '../api/FirebaseDatabase'
 
 const Home = () => {
@@ -30,6 +31,9 @@ const Home = () => {
                     <MainProfileCard
                         data={userData}
                     />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <SkillList/>
                 </Grid>
             </Grid>
         </div>

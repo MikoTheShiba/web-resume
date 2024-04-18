@@ -1,20 +1,19 @@
 import React from "react";
-import { Box, Card, Typography } from '@mui/material';
+import { Card, Grid, LinearProgress, Typography } from '@mui/material';
 
 const Skillbar = ({ skill, progress }) => {
   return (
     <Card className='CardEntry'>
-      <Grid container>
+      <Grid container display="flex" justifyContent="center" alignItems="center">
         <Grid item xs={4}>
-          <Typography>`${skill}`</Typography>
+          <Typography>{skill}</Typography>
         </Grid>
-        <Grid item xs={8}>
-          <Stack>
-            <Typography variant='h6'>`${skill}</Typography>
-            <LinearProgress variant="determinate" value={progress} />
-          </Stack>
+        <Grid item xs={8} >
+          <LinearProgress variant="determinate" value={progress} />
         </Grid>
       </Grid>
     </Card>
   )
 }
+
+export default Skillbar;

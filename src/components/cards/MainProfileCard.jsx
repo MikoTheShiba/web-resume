@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { Card, Grid, Stack, Typography } from '@mui/material';
 import { ThemeProvider } from '@mui/material';
 import { bebas, roboto } from "../../themes";
@@ -11,7 +10,7 @@ const MainProfileCard = ({data}) => {
                 <Grid container spacing={'10px'} sx={{padding:'10px'}}>
                     <Grid item>
                         <Card xs={12} md={6} sx={{display: 'flex', justifyContent: 'center', borderRadius: '16px'}}>
-                            <img src={data.pic} style={{height: '11rem', width: '11rem'}}/>
+                            <img src={data.pic} style={{height: '11rem', width: '11rem'}} alt={`${data.firstName}`}/>
                         </Card>
                     </Grid>
                     <Grid item>

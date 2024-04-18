@@ -1,7 +1,4 @@
-import { createTheme, ThemeProvider } from '@mui/material';
-import { useEffect } from 'react';
-import { useLocation, Router } from 'react-router-dom';
-import { RouteData } from './RouteData';
+import { createTheme } from '@mui/material';
 const bebas = createTheme({
     typography:{
         fontFamily: [
@@ -9,13 +6,7 @@ const bebas = createTheme({
         ].join(','),
     },
 })
-const mplusone = createTheme({
-    typography:{
-        fontFamily: [
-            'M PLUS 1 Code, monospace',
-        ].join(','),
-    },
-})
+
 const seymour = createTheme({
     typography:{
         fontFamily: [
@@ -33,3 +24,12 @@ const roboto = createTheme({
 
 
 export {bebas, seymour, roboto};
+
+/*}
+const mplusone = createTheme({
+    typography:{
+        fontFamily: [
+            'M PLUS 1 Code, monospace',
+        ].join(','),
+    },
+})*/

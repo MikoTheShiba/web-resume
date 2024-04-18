@@ -27,10 +27,10 @@ const SkillList = ({skills}) => {
         };
     }, [])
   return (
-    <Card className='Cards'>
-      <Stack>
+    <Card className='Cards' sx={{padding:'5px'}}>
+      <Stack spacing={0.5}>
         <ThemeProvider theme={bebas}>
-          <Typography>Skillsheet</Typography>
+          <Typography variant='h4'>Skillsheet</Typography>
         </ThemeProvider>
         <ThemeProvider theme={roboto}>
           {skillKeys.map(key=><Skillbar skill={key} progress={skillData[key]}></Skillbar>)}

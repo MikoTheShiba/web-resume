@@ -8,15 +8,15 @@ import { ThemeProvider } from '@mui/material';
 import { bebas, roboto } from "../../../themes";
 
 const SkillList = ({skills}) => {
-  const [skillData, setSkillData] = useState({});
-  const [skillKeys, setSkillKeys] = useState([])
+  const [skillData, setSkillData] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
             const docRef = doc(db, 'users', 'shiba', 'skillsheet', 'hardskills');
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
-                setSkillData(docSnap.data());
-                setSkillKeys(Object.keys(docSnap.data()));
+                setSkillData(Object.entries(docSnap.data())
+                .sort((a, b) => b[1] - a[1])
+                .map(([skill, value]) => ({ skill, value })));
             } else {
                 console.log('(not) real')
             }
@@ -33,7 +33,7 @@ const SkillList = ({skills}) => {
           <Typography variant='h4'>Skillsheet</Typography>
         </ThemeProvider>
         <ThemeProvider theme={roboto}>
-          {skillKeys.map(key=><Skillbar skill={key} progress={skillData[key]}></Skillbar>)}
+          {skillData.map(i=><Skillbar skill={i['skill']} progress={i['value']}></Skillbar>)}
         </ThemeProvider>
       </Stack>
     </Card>

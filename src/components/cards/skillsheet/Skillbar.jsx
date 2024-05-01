@@ -23,7 +23,7 @@ const Skillbar = ({ skill, progress }) => {
           <Typography sx={{textAlign: 'right', marginRight:'10px'}}>{skill}</Typography>
         </Grid>
         <Grid item xs={1}>
-          <img src={imgURL} style={{height:'1.5rem', width:'1.5rem'}}></img>
+          <img src={imgURL} style={{height:'1.5rem', width:'1.5rem', userSelect:'none'}} alt={skill+"icon"}></img>
         </Grid>
         <Grid item xs={8} >
           <Tooltip title ={progress} placement='top' arrow>

@@ -66,3 +66,6 @@ Step 3: And thats it you're done
 # Update Logs
 
 _1.0 (04/09/2024)_ Finished a fully functioning Navbar and Sidebar
+
+
+back from hiatus

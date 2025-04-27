@@ -10,7 +10,6 @@ const Skillbar = ({ skill, progress }) => {
     const getImageUrl = async () => {
       const url1 = ref(storage, `skillicons/${skill}.png`)
       getDownloadURL(url1).then((url)=> {
-        console.log(url);
         setImgURL(url);
       })
     }

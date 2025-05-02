@@ -3,3 +3,8 @@ Holy shit im back where have i been
 
 28/04/2025
 RESTRUCTURE THE FIREBASE. YOU CAN ONLY HAVE A DOCUMENT DIRECTORY OF EVEN NUMBERS, DIPSHIT
+
+05/03/2025
+Silly me. Needed a refresher on Firebase data acquisition to continue
+Tweaked the Firebase Storage to normal
+You may wanna double check Trello for more info from now on

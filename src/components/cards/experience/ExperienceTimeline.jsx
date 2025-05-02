@@ -5,17 +5,18 @@ import { Card, Stack, Typography } from '@mui/material';
 import {db} from '../../../api/FirebaseDatabase';
 import { ThemeProvider } from '@mui/material';
 import { bebas, roboto } from "../../../themes";
+import ExpCard from './ExpCard';
 
 const ExperienceTimeline = ({skills}) => {
     const [expList, setExp] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            const docRef = doc(db, 'users', 'shiba', 'experience');
+            const docRef = doc(db, 'users', 'shiba', 'exp', 'work');
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
-                //setExp(Object.entries(docSnap.data()));
-                //NOTE TO SELF. RESTRUCTURE FIREBASE TO BE AN EVEN NUMBER I HATE MYSELF
-                console.log(docSnap.data());
+                setExp(Object.entries(docSnap.data())
+                .sort((a, b) => b[1][1] - a[1][1])
+                .map(([code, value]) => ({ code, value })));
             } else {
                 console.log('(not) real')
             }
@@ -30,6 +31,9 @@ const ExperienceTimeline = ({skills}) => {
             <Stack>
                 <ThemeProvider theme={bebas}>
                     <Typography variant='h4'>Experience Timeline</Typography>
+                </ThemeProvider>
+                <ThemeProvider theme={roboto}>
+                    {expList.map(i=><ExpCard code={i['code']} value={i['value']}></ExpCard>)}
                 </ThemeProvider>
             </Stack>
         </Card>

@@ -12,7 +12,7 @@ import { bebas, roboto } from "../../../themes";
 [3] Description
 [4] Important?
 */
-const ExpCard = ({ code, value }) => {
+const MinorExpCard = ({ code, value }) => {
     const [imgURL, setImgURL] = useState('')
       useEffect(() => {
         const getImageUrl = async () => {
@@ -28,21 +28,18 @@ const ExpCard = ({ code, value }) => {
             <Grid container display="flex" justifyContent="center" alignItems="center">
                 <Grid item xs={2}>
                     <ThemeProvider theme={bebas}>
-                    <Stack spacing={0.5}>
-                        <Typography sx={{textAlign: 'left'}} variant='h4'>{value[1]}</Typography>
-                        <Typography sx={{textAlign: 'left'}} variant='h4'>{value[0]}</Typography>
-                    </Stack>
+                        <Typography sx={{textAlign: 'left'}} variant='h6'>{value[1]}-{value[0]}</Typography>
                     </ThemeProvider>
                 </Grid>
                 <Grid item xs={2}>
-                          <img src={imgURL} style={{height:'5rem', width:'5rem', userSelect:'none'}} alt={value[2]+"icon"}></img>
+                     <img src={imgURL} style={{height:'2.5rem', width:'2.5rem', userSelect:'none'}} alt={value[2]+"icon"}></img>
                 </Grid>
                 <Grid item xs={8}>
-                    <Stack spacing={0.5}>
+                    <Stack spacing={0.05}>
                         <ThemeProvider theme={bebas}>
-                            <Typography sx={{textAlign: 'left'}} variant='h4'>{value[2]}</Typography>
+                            <Typography sx={{textAlign: 'left', fontSize: '1.25rem'}} variant='h5'>{value[2]}</Typography>
                         </ThemeProvider>
-                        <Typography sx={{textAlign: 'left'}}>{value[3]}</Typography>
+                        <Typography sx={{textAlign: 'left', fontSize: '0.65rem'}}>{value[3]}</Typography>
                     </Stack>
                 </Grid>
             </Grid>
@@ -50,4 +47,4 @@ const ExpCard = ({ code, value }) => {
         
     )
 }
-export default ExpCard;
+export default MinorExpCard;

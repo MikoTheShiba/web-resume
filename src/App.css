@@ -13,6 +13,13 @@
   }
 }
 
+@media print {
+  body {
+    -webkit-print-color-adjust: exact; /* For Chrome */
+    print-color-adjust: exact; /* For Firefox */
+  }
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

@@ -6,6 +6,7 @@ import {db} from '../../../api/FirebaseDatabase';
 import { ThemeProvider } from '@mui/material';
 import { bebas, roboto } from "../../../themes";
 import ExpCard from './ExpCard';
+import MinorExpCard from './MinorExpCard';
 
 const ExperienceTimeline = ({skills}) => {
     const [expList, setExp] = useState([]);
@@ -28,16 +29,25 @@ const ExperienceTimeline = ({skills}) => {
     }, [])
     return (
         <Card className='Cards' sx={{padding: '5px'}}>
-            <Stack>
+            <Stack spacing={0.5}>
                 <ThemeProvider theme={bebas}>
                     <Typography variant='h4'>Experience Timeline</Typography>
                 </ThemeProvider>
                 <ThemeProvider theme={roboto}>
-                    {expList.map(i=><ExpCard code={i['code']} value={i['value']}></ExpCard>)}
+                {expList.map(i =>
+                    i['value'][4] === false ? (
+                        <MinorExpCard code={i['code']} value={i['value']} />
+                    ) : (
+                        <ExpCard code={i['code']} value={i['value']} />
+                    )
+                )}
                 </ThemeProvider>
             </Stack>
         </Card>
     )
 }
+
+
+//just in case line 36 explodes: {expList.map(i=><ExpCard code={i['code']} value={i['value']}></ExpCard>)}
 
 export default ExperienceTimeline;

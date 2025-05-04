@@ -5,6 +5,10 @@ import { ref, getDownloadURL } from 'firebase/storage';
 import { storage, xhr } from '../../../api/FirebaseDatabase'
 import { ThemeProvider } from '@mui/material';
 import { bebas, roboto } from "../../../themes";
+
+import WorkIcon from '@mui/icons-material/Work';
+import SchoolIcon from '@mui/icons-material/School';
+
 /*data structure is as follows
 [0] Start
 [1] End
@@ -23,18 +27,22 @@ const MinorExpCard = ({ code, value }) => {
         }
         getImageUrl();
       }, []);
+      const iconography = value[5] === 'E' ? <SchoolIcon /> : <WorkIcon />;
     return(
         <Card className='CardEntry' sx={{padding:'5px'}}>
             <Grid container display="flex" justifyContent="center" alignItems="center">
+                <Grid item xs={1}>
+                    {iconography}
+                </Grid>
                 <Grid item xs={2}>
                     <ThemeProvider theme={bebas}>
-                        <Typography sx={{textAlign: 'left'}} variant='h6'>{value[1]}-{value[0]}</Typography>
+                        <Typography sx={{textAlign: 'left'}} variant='h6'>{value[0]}-{value[1]}</Typography>
                     </ThemeProvider>
                 </Grid>
                 <Grid item xs={2}>
                      <img src={imgURL} style={{height:'2.5rem', width:'2.5rem', userSelect:'none'}} alt={value[2]+"icon"}></img>
                 </Grid>
-                <Grid item xs={8}>
+                <Grid item xs={7}>
                     <Stack spacing={0.05}>
                         <ThemeProvider theme={bebas}>
                             <Typography sx={{textAlign: 'left', fontSize: '1.25rem'}} variant='h5'>{value[2]}</Typography>

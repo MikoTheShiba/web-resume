@@ -5,6 +5,7 @@ import { Card, Stack, Typography } from '@mui/material';
 import { db } from '../../../api/FirebaseDatabase';
 import { ThemeProvider } from '@mui/material';
 import { bebas, roboto } from "../../../themes";
+import ContactItem from './ContactItem';
 
 const ContactCard = () => {
     const [contactList, setContacts] = useState([]);
@@ -25,6 +26,24 @@ const ContactCard = () => {
             // Cleanup function if needed
         };
     }, [])
+    const ceptions = ['mail', 'address'];
+    const phoneceptions = (i) => {
+        if (i['contact'].includes('phone')){
+            return(<ContactItem contact={i['contact']} detail={i['value']}/>)
+        }
+    }
+    const inceptions = (i) => {
+        if (ceptions.every(substring => !i['contact'].includes(substring))){
+            if (!i['contact'].includes('phone')){
+                return(<ContactItem contact={i['contact']} detail={i['value']}/>)
+            }
+        }
+    }
+    const exceptions = (i) => {
+        if (ceptions.some(substring => i['contact'].includes(substring))){
+                return(<ContactItem contact={i['contact']} detail={i['value']}/>)
+        }
+    }
     return (
         <Card className='Cards' sx={{padding:'5px'}}>
             <Stack spacing={0.5}>
@@ -32,7 +51,9 @@ const ContactCard = () => {
                     <Typography variant='h4'>Contact Information</Typography>
                 </ThemeProvider>
                 <ThemeProvider theme={roboto}>
-                    {contactList.map(i => <Typography>{i['contact']} {i['value']}</Typography>)}
+                    {contactList.map(i => phoneceptions(i))}
+                    {contactList.map(i => exceptions(i))}
+                    {contactList.map(i => inceptions(i))}
                 </ThemeProvider>
             </Stack>
         </Card>

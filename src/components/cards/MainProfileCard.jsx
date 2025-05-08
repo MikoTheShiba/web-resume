@@ -33,7 +33,7 @@ const MainProfileCard = ({data}) => {
                         <Card fullWidth className='CardEntry' sx={{minWidth:'100%'}}>
                             <ThemeProvider theme={roboto}>
                                 <Typography variant='h5'>About Me</Typography>
-                                <Typography sx={{whiteSpace: 'pre-wrap'}} dangerouslySetInnerHTML={{ __html: `${data.about}` }}/>
+                                <Typography sx={{whiteSpace: 'pre-wrap', textAlign: 'left', fontSize: '0.9rem'}} dangerouslySetInnerHTML={{ __html: `${data.about}` }}/>
                             </ThemeProvider>
                         </Card>
                     </Grid>

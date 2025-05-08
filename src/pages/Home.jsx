@@ -4,6 +4,7 @@ import { Grid } from '@mui/material';
 import MainProfileCard from '../components/cards/MainProfileCard';
 import SkillList from '../components/cards/skillsheet/SkillList';
 import ExperienceTimeline from '../components/cards/experience/ExperienceTimeline';
+import ContactCard from '../components/cards/contacts/ContactCard';
 import { doc, getDoc} from "firebase/firestore";
 import {db} from '../api/FirebaseDatabase'
 
@@ -33,11 +34,14 @@ const Home = () => {
                         data={userData}
                     />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={6} xl={3}>
                     <SkillList/>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={6} xl={3}>
                     <ExperienceTimeline/>
+                </Grid>
+                <Grid item xs={12} md={6} xl={3}>
+                    <ContactCard/>
                 </Grid>
             </Grid>
         </div>

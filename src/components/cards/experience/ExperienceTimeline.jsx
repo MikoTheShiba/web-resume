@@ -8,7 +8,7 @@ import { bebas, roboto } from "../../../themes";
 import ExpCard from './ExpCard';
 import MinorExpCard from './MinorExpCard';
 
-const ExperienceTimeline = ({skills}) => {
+const ExperienceTimeline = () => {
     const [expList, setExp] = useState([]);
     useEffect(() => {
         const fetchData = async () => {

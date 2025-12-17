@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { Grid } from '@mui/material';
+import { Grid , Stack} from '@mui/material';
 import MainProfileCard from '../components/cards/MainProfileCard';
 import SkillList from '../components/cards/skillsheet/SkillList';
 import ExperienceTimeline from '../components/cards/experience/ExperienceTimeline';
 import ContactCard from '../components/cards/contacts/ContactCard';
 import { doc, getDoc} from "firebase/firestore";
 import {db} from '../api/FirebaseDatabase'
+import CertCard from '../components/cards/certs/CertCard';
 
 const Home = () => {
     const [userData, setUserData] = useState({});
@@ -35,13 +36,20 @@ const Home = () => {
                     />
                 </Grid>
                 <Grid item xs={12} md={6} xl={3}>
-                    <SkillList/>
+                    <Stack>
+                    <Grid item xs={12}>
+                        <SkillList/>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <ContactCard/>
+                    </Grid>
+                </Stack>
                 </Grid>
                 <Grid item xs={12} md={6} xl={3}>
                     <ExperienceTimeline/>
                 </Grid>
                 <Grid item xs={12} md={6} xl={3}>
-                    <ContactCard/>
+                    <CertCard/>
                 </Grid>
             </Grid>
         </div>

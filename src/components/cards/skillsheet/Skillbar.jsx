@@ -19,14 +19,14 @@ const Skillbar = ({ skill, progress }) => {
     <Card className='CardEntry' sx={{padding:'5px'}}>
       <Grid container display="flex" justifyContent="center" alignItems="center">
         <Grid item xs={3}>
-          <Typography sx={{textAlign: 'right', marginRight:'10px'}}>{skill}</Typography>
+          <Typography sx={{textAlign: 'right', marginRight:'10px', fontSize:'0.7rem'}}>{skill}</Typography>
         </Grid>
         <Grid item xs={1}>
-          <img src={imgURL} style={{height:'1.5rem', width:'1.5rem', userSelect:'none'}} alt={skill+"icon"}></img>
+          <img src={imgURL} style={{height:'1rem', width:'1rem', userSelect:'none'}} alt={skill+"icon"}></img>
         </Grid>
         <Grid item xs={8} >
           <Tooltip title ={progress} placement='top' arrow>
-            <LinearProgress variant="determinate" value={progress} sx={{height:'1.5rem', borderRadius:5}}/>
+            <LinearProgress variant="determinate" value={progress} sx={{height:'0.8rem', borderRadius:5}}/>
           </Tooltip>
         </Grid>
       </Grid>

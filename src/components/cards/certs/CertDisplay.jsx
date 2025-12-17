@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import { Accordion, AccordionDetails, AccordionSummary, Grid, Stack, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Card, Grid, Stack, Typography } from '@mui/material';
 import { ref, getDownloadURL } from 'firebase/storage';
 import { storage, xhr } from '../../../api/FirebaseDatabase'
 import { ThemeProvider } from '@mui/material';
@@ -19,7 +19,7 @@ const CertDisplay = ({code, value}) => {
           }, []);
     return(
         <Card>
-            
+
         </Card>
     )
 }

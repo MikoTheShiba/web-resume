@@ -6,6 +6,14 @@ import { storage, xhr } from '../../../api/FirebaseDatabase'
 import { ThemeProvider } from '@mui/material';
 import { bebas, roboto } from "../../../themes";
 
+/*Data Structure
+[0] name
+[1] description
+[2] date
+[3] prio
+[4] file code
+*/
+
 const CertDisplay = ({code, value}) => {
     const [imgURL, setImgURL] = useState('')
           useEffect(() => {
@@ -19,9 +27,20 @@ const CertDisplay = ({code, value}) => {
           }, []);
     return(
         <Card className='CertDisplay' sx={{padding:'3px'}}>
+            <Stack>
             <ThemeProvider theme={bebas}>
-                <Typography sx={{textAlign: 'left'}} variant='h4'>{value[0]}</Typography>
+                <Typography sx={{textAlign: 'center'}} variant='h4'>{value[0]}</Typography>
             </ThemeProvider>
+            <Grid container>
+                <Grid item xs={12} md={7}><img src={imgURL} style={{height:'95%', width:'95%', userSelect:'none', padding:'0.5rem'}} alt={value[2]+"icon"}></img></Grid>
+                <Grid item xs={12} md={5}>
+                    <Stack>
+                        <Typography variant='h5'>{value[1]}</Typography>
+                        <Typography variant='h6'>{value[2]}</Typography>
+                    </Stack>
+                </Grid>
+            </Grid>
+            </Stack>
         </Card>
     )
 }

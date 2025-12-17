@@ -38,7 +38,6 @@ const CertCard = ({}) => {
                     <Typography variant='h6'>and other documents</Typography>
                 </ThemeProvider>
                 <ThemeProvider theme={roboto}>
-                    <Typography>
                         {expList.map(i =>
                     i['value'][3] === false ? (
                         <MinorCertDisplay code={i['code']} value={i['value']} />
@@ -46,7 +45,6 @@ const CertCard = ({}) => {
                         <CertDisplay code={i['code']} value={i['value']} />
                     )
                 )}
-                    </Typography>
                 </ThemeProvider>
             </Stack>
         </Card>

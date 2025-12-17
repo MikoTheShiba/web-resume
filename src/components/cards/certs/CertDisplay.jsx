@@ -18,8 +18,10 @@ const CertDisplay = ({code, value}) => {
             getImageUrl();
           }, []);
     return(
-        <Card>
-
+        <Card className='CertDisplay' sx={{padding:'3px'}}>
+            <ThemeProvider theme={bebas}>
+                <Typography sx={{textAlign: 'left'}} variant='h4'>{value[0]}</Typography>
+            </ThemeProvider>
         </Card>
     )
 }

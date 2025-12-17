@@ -7,6 +7,7 @@ import ExperienceTimeline from '../components/cards/experience/ExperienceTimelin
 import ContactCard from '../components/cards/contacts/ContactCard';
 import { doc, getDoc} from "firebase/firestore";
 import {db} from '../api/FirebaseDatabase'
+import CertCard from '../components/cards/certs/CertCard';
 
 const Home = () => {
     const [userData, setUserData] = useState({});
@@ -42,6 +43,9 @@ const Home = () => {
                 </Grid>
                 <Grid item xs={12} md={6} xl={3}>
                     <ContactCard/>
+                </Grid>
+                <Grid item xs={12} md={6} xl={3}>
+                    <CertCard/>
                 </Grid>
             </Grid>
         </div>

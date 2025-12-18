@@ -35,10 +35,12 @@ const ExperienceTimeline = () => {
                 </ThemeProvider>
                 <ThemeProvider theme={roboto}>
                 {expList.map(i =>
-                    i['value'][4] === false ? (
-                        <MinorExpCard code={i['code']} value={i['value']} />
-                    ) : (
-                        <ExpCard code={i['code']} value={i['value']} />
+                    i['value'][6] === 0 ? null : (
+                        i['value'][4] === false ? (
+                            <MinorExpCard code={i['code']} value={i['value']} />
+                        ) : (
+                            <ExpCard code={i['code']} value={i['value']} />
+                        )
                     )
                 )}
                 </ThemeProvider>

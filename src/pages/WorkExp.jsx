@@ -1,17 +1,10 @@
 import React from 'react';
 import {Toolbar, Typography} from '@mui/material';
-
+import ExperienceTimeline from '../components/cards/experience'
 
 const WorkExperience = () => {
     return (
-        <div>
-            <Toolbar/>
-            <Typography>WorkExp</Typography>
-            <Typography>HI</Typography>
-            <Typography>HI</Typography>
-            <Typography>HI</Typography>
-            <Typography>HI</Typography>
-        </div>
+        <ExperienceTimeline/>
     )
 }
 

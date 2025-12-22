@@ -1,18 +1,14 @@
 import React from 'react';
 import {Toolbar, Typography} from '@mui/material';
+import SkillList from '../components/cards/skillsheet/SkillList'
 
 
-const Skillsheet = () => {
+const SkillList = () => {
     return (
         <div>
-            <Toolbar/>
-            <Typography>SKILLSHEET</Typography>
-            <Typography>SKILLS</Typography>
-            <Typography>HI</Typography>
-            <Typography>HI</Typography>
-            <Typography>HI</Typography>
+            <SkillList></SkillList>
         </div>
     )
 }
 
-export default Skillsheet;
+export default SkillList;

@@ -17,6 +17,9 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 [2] Organization
 [3] Description
 [4] Important?
+[5] Type (E for Education, W for Work)
+[6] Hidden Status
+[7] In Depth Description
 */
 const ExpCard = ({ code, value }) => {
     const [imgURL, setImgURL] = useState('')
@@ -59,7 +62,7 @@ const ExpCard = ({ code, value }) => {
                 </Grid>
             </AccordionSummary>
             <AccordionDetails>
-                <Typography sx={{textAlign: 'left'}}>{value[3]}</Typography>
+                <Typography sx={{textAlign: 'left'}}>{value[7]}</Typography>
             </AccordionDetails>
         </Accordion>
         
